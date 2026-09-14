@@ -5,7 +5,7 @@ Hijacking (SCH)** — payload-less supply-chain attacks that disguise
 malicious intent (credential exfiltration, remote code execution) as
 ordinary compliance or operational prose, so they carry no code signature
 for a traditional scanner to catch. Skills rarely embed explicit malicious
-code; SCH-Guard has an LLM judge the *intent* of the instructions against
+code; SCH Guard has an LLM judge the *intent* of the instructions against
 an explicit taxonomy instead of pattern-matching the text.
 
 Background: Liu et al., *"Exploiting LLM Agent Supply Chains via
@@ -21,12 +21,12 @@ cd sch-guard
 ```
 
 No install step beyond having Python 3.9+ and one of:
-- `ANTHROPIC_API_KEY` set in your environment (SCH-Guard calls the
+- `ANTHROPIC_API_KEY` set in your environment (SCH Guard calls the
   Anthropic API directly — run `pip install anthropic` first), or
-- an authenticated `claude` CLI session (SCH-Guard shells out to
+- an authenticated `claude` CLI session (SCH Guard shells out to
   `claude -p` in headless mode; no extra install needed).
 
-SCH-Guard picks whichever is available automatically.
+SCH Guard picks whichever is available automatically.
 
 ## Usage
 
@@ -51,7 +51,7 @@ Exit codes: `0` everything's clean, `1` something was flagged malicious,
 CI gate for a skill marketplace repo:
 
 ```yaml
-- name: SCH-Guard scan
+- name: SCH Guard scan
   run: python3 cli.py skills/ --recursive
   env:
     ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -59,7 +59,7 @@ CI gate for a skill marketplace repo:
 
 ## How it works
 
-`core.py` holds SCH-Guard's system prompt: it checks a skill document
+`core.py` holds SCH Guard's system prompt: it checks a skill document
 against five signals distilled from the SCH taxonomy —
 
 1. **Ambient data harvest** — collecting broad host state (env vars,
