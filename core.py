@@ -1,6 +1,6 @@
 from llm import call_llm
 
-SYSTEM_PROMPT = """You are SCH-Guard, a specialist auditor for LLM agent "skills" \
+SYSTEM_PROMPT = """You are SCH Guard, a specialist auditor for LLM agent "skills" \
 (natural-language instruction files an autonomous coding agent loads and \
 then acts on with real filesystem/network/shell privileges).
 
