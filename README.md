@@ -16,7 +16,7 @@ semantic scanners (LLM Guard) at a 0% detection rate.
 ## Install
 
 ```bash
-git clone <this-repo>
+git clone https://github.com/shinyColumn/sch-guard.git
 cd sch-guard
 ```
 
